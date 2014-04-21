@@ -2,24 +2,26 @@
 #include <windows.h>
 using namespace std;
  
-class Node
+/// \file Stek.cpp
+
+///Struktura steka
+struct Node
 {
-public:
     int number;
     Node* last;
 };
 
-void russia(const char*);
- 
+ /// \fn Osnovnaya functiya
+
 void main()
 {
-    Node* ptrLast = NULL;
+    Node* ptrLast = NULL; 
     Node* top = NULL;
     short action = -1;
-  setlocale(LC_ALL,"rus");
-    while (1)
+  setlocale(LC_ALL,"rus");  /// Delaem vozmojnim vvod po russki
+    while (1)   
     {
-        cout<<"1. Затолкнуть В Стек\n";
+        cout<<"1. Затолкнуть В Стек\n";      /// Menu
         cout<<"2. Вытолкнуть Из Стека\n";
         cout<<"3. Вершина Стека\n";
         cout<<"4. Содержимое Стека\n";
@@ -27,13 +29,13 @@ void main()
         cout<<"Ваш Выбор: ";
         cin>>action;        
  
-        if (action == 0)
+        if (action == 0)  ///Vixod iz programm
         {
             system("CLS");
             break;
         }
  
-        if (action == 1)
+        if (action == 1) ///Dobavlaem chislo v stek
         {
             system("CLS");
             int numb = -1;          
@@ -56,7 +58,7 @@ void main()
             continue;
         }
  
-        if (action == 2)
+        if (action == 2)  ///Udalaem iz steka
         {
             system("CLS");
             Node* ptrDelete = NULL;
@@ -81,7 +83,7 @@ void main()
             continue;
         }
  
-        if (action == 3)
+        if (action == 3)  /// Vershina steka
         {
             system("CLS");
             if (top == NULL)
@@ -98,7 +100,7 @@ void main()
             continue;
         }
  
-        if (action == 4)
+        if (action == 4) /// Smotrim stek
         {
             system("CLS");
             Node* ptr = NULL;
@@ -124,8 +126,8 @@ void main()
             }
         }
  
-        if (action > 4)
-        {
+        if (action > 4)   /// if vibrali punct ne iz menu
+        { 
             system("CLS");
             cout<<"\t!!! НЕВЕРНЫЙ ВЫБОР. ПОВТОРИТЕ ВВОД !!!\n\n";
             system("PAUSE");
